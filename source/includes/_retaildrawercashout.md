@@ -6,20 +6,28 @@
 + **meta** `object` - Внешний уникальный идентификатор выплаты в формате метаданных `Необходимое`
     + **href** `string` - Ссылка на выплату `Необходимое`
     + **id** `string` - Идентификатор выплаты `Необходимое`
+    + **type** `string` - тип сущности `Необходимое`
+    + **idType** `string` - тип id (native или sync) `Необходимое`
 + **retailShift** `object` - Данные о смене `Необходимое`
     + **meta** `object` `Необходимое`
         + **href** `string` - Ссылка на смену `Необходимое`
         + **id** `string` - Идентификатор смены `Необходимое`
+        + **type** `string` - тип сущности `Необходимое`
+        + **idType** `string` - тип id (native или sync) `Необходимое`
 + **retailStore** `object` - Данные о точке продаж, на которой была совершена операция выплаты `Необходимое`
     + **meta** `object` `Необходимое`
         + **href** `string` - Ссылка на точку продаж `Необходимое`
         + **id** `string` - Идентификатор точки продаж `Необходимое`
+        + **type** `string` - тип сущности `Необходимое`
+        + **idType** `string` - тип id (native или sync) `Необходимое`
 + **name** `string` - Номер выплаты `Необходимое`
 + **moment** `date` - Дата выплаты денег в формате ГГГГ-ММ-ДД ЧЧ:ММ:СС `Необходимое`
 + **cashier** `object` `Необходимое` - Данные кассира
     + **meta** `object` `Необходимое`
         + **href** `string` - Ссылка на кассира `Необходимое`
         + **id** `string` - Идентификатор кассира `Необходимое`
+        + **type** `string` - тип сущности `Необходимое`
+        + **idType** `string` - тип id (native или sync) `Необходимое`
     + **firstName** - Имя
     + **middleName** - Фамилия
     + **lastName** - Отчество
@@ -45,25 +53,33 @@ X-Lognex-Fiscal-Account-Id: идентификатор аккаунт-решен
 {
   "meta": {
     "href": "https://api.moysklad.ru/api/remap/1.2/entity/retaildrawercashin/675b943f-a25b-433c-90e0-5c84c7b0c307",
-    "id": "675b943f-a25b-433c-90e0-5c84c7b0c307"
+    "id": "675b943f-a25b-433c-90e0-5c84c7b0c307",
+    "type": "RetailDrawerCashOut",
+    "idType": "native"
   },
   "retailShift": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/retailshift/2b5eb22f-139e-11e6-9464-e4de00000073",
-      "id": "2b5eb22f-139e-11e6-9464-e4de00000073"
+      "id": "2b5eb22f-139e-11e6-9464-e4de00000073",
+      "type": "RetailShift",
+      "idType": "native"
     }
   },
   "name": "0001",
   "retailstore": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/retilstore/e827ea09-1447-41b6-8118-13cf438e9145",
-      "id": "e827ea09-1447-41b6-8118-13cf438e9145"
+      "id": "e827ea09-1447-41b6-8118-13cf438e9145",
+      "type": "RetailStore",
+      "idType": "native"
     }
   },
   "cashier": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/a4f36276-7b5a-11e6-8a84-bae500000004",
-      "id": "a4f36276-7b5a-11e6-8a84-bae500000004"
+      "id": "a4f36276-7b5a-11e6-8a84-bae500000004",
+      "type": "Employee",
+      "idType": "native"
     },
     "firstName": "Иван",
     "middleName": "Иванович",

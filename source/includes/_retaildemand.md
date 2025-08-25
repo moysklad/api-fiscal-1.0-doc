@@ -6,11 +6,15 @@
 + **meta** `object` - Внешний уникальный идентификатор продажи в формате метаданных `Необходимое`
     + **href** `string` - Ссылка на продажу `Необходимое`
     + **id** `string` - Идентификатор продажи `Необходимое`
+    + **type** `string` - тип сущности `Необходимое`
+    + **idType** `string` - тип id (native или sync) `Необходимое`
 + **name** `string` - Номер продажи `Необходимое`
 + **cashier** `object` `Необходимое` - Данные кассира
     + **meta** `object` `Необходимое`
         + **href** `string` - Ссылка на кассира `Необходимое`
         + **id** `string` - Идентификатор кассира `Необходимое`
+        + **type** `string` - тип сущности `Необходимое`
+        + **idType** `string` - тип id (native или sync) `Необходимое`
     + **firstName** - Имя
     + **middleName** - Фамилия
     + **lastName** - Отчество
@@ -18,10 +22,14 @@
     + **meta** `object` `Необходимое`
         + **href** `string` - Ссылка на точку продаж `Необходимое`
         + **id** `string` - Идентификатор точки продаж `Необходимое`
+        + **type** `string` - тип сущности `Необходимое`
+        + **idType** `string` - тип id (native или sync) `Необходимое`
 + **retailShift** `object` - Данные о смене `Необходимое`
     + **meta** `object` `Необходимое`
         + **href** `string` - Ссылка на смену `Необходимое`
         + **id** `string` - Идентификатор смены `Необходимое`
+        + **type** `string` - тип сущности `Необходимое`
+        + **idType** `string` - тип id (native или sync) `Необходимое`
 + **moment** `date` - Дата продажи в формате ГГГГ-ММ-ДД ЧЧ:ММ:СС `Необходимое`
 + **payments** `object` - Информация о платежах `Необходимое`
     + **cashSum** `string` - Сумма оплаты наличными
@@ -38,6 +46,8 @@
         + **meta** `object` `Необходимое`
             + **href** `string` - Идентификатор товара/услуги `Необходимое`
             + **id** `string` - Идентификатор товара/услуги `Необходимое`
+            + **type** `string` - тип сущности `Необходимое`
+            + **idType** `string` - тип id (native или sync) `Необходимое`
         + **name** `string` - Название товара `Необходимое`
     + **uom** `object` - Единица измерения
         + **name** `string` - Название единицы измерения `Необходимое`
@@ -55,6 +65,11 @@
 + **vatEnabled** `boolean` - Флаг, указывающий, что документ содержит НДС
 + **vatIncluded** `boolean` - Флаг, указывающий, включён ли НДС в цену
 + **customerOrder** `object` - Заказ покупателя в МС
+  + **meta** `object` `Необходимое`
+    + **href** `string` - Ссылка на заказ `Необходимое`
+    + **id** `string` - Идентификатор заказа `Необходимое`
+    + **type** `string` - тип сущности `Необходимое`
+    + **idType** `string` - тип id (native или sync) `Необходимое`
 
 > **`POST`**
 > /1/retaildemand
@@ -75,19 +90,25 @@ X-Lognex-Fiscal-Account-Id: идентификатор аккаунт-решен
 {
   "meta": {
     "href": "https://api.moysklad.ru/api/remap/1.0/entity/sale/saleId",
-    "id": "saleId"
+    "id": "saleId",
+    "type": "RetailDemand",
+    "idType": "native"
   },
   "name": "12345",
   "retailstore": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.0/entity/retailstore/retailStoreId",
-      "id": "retailStoreId"
+      "id": "retailStoreId",
+      "type": "RetailStore",
+      "idType": "native"
     }
   },
   "retailShift": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.2/entity/retailshift/2b5eb22f-139e-11e6-9464-e4de00000073",
-      "id": "2b5eb22f-139e-11e6-9464-e4de00000073"
+      "id": "2b5eb22f-139e-11e6-9464-e4de00000073",
+      "type": "RetailShift",
+      "idType": "native"
     }
   },
   "moment": "2024-11-20 14:30:00",
@@ -102,7 +123,9 @@ X-Lognex-Fiscal-Account-Id: идентификатор аккаунт-решен
       "assortment": {
         "meta": {
           "href": "https://api.moysklad.ru/api/remap/1.0/entity/product/productId",
-          "id": "productId"
+          "id": "productId",
+          "type": "Product",
+          "idType": "native"
         },
         "name": "Товар 1"
       },
@@ -122,7 +145,9 @@ X-Lognex-Fiscal-Account-Id: идентификатор аккаунт-решен
   "cashier": {
     "meta": {
       "href": "https://online.moysklad.ru/api/remap/1.2/entity/employee/a4f36276-7b5a-11e6-8a84-bae500000004",
-      "id": "a4f36276-7b5a-11e6-8a84-bae500000004"
+      "id": "a4f36276-7b5a-11e6-8a84-bae500000004",
+      "type": "Employee",
+      "idType": "native"
     },
     "firstName": "Иван",
     "middleName": "Иванович",
@@ -133,7 +158,9 @@ X-Lognex-Fiscal-Account-Id: идентификатор аккаунт-решен
   "customerOrder": {
     "meta": {
       "href": "https://api.moysklad.ru/api/remap/1.0/entity/customerorder/orderId",
-      "id": "orderId"
+      "id": "orderId",
+      "type": "CustomerOrder",
+      "idType": "native"
     }
   }
 }
