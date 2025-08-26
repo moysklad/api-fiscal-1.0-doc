@@ -25,7 +25,7 @@
     + **firstName** - Имя
     + **middleName** - Фамилия
     + **lastName** - Отчество
-+ **closeMoment** `date` - Дата закрытия смены в формате ГГГГ-ММ-ДД ЧЧ:ММ:СС `Необходимое`
++ **closeMoment** `date` - Дата закрытия смены в формате `YYYY-MM-DDThh:mm:ss` `Необходимое`
 
 
 > **`PUT`**
@@ -73,7 +73,7 @@ X-Lognex-Fiscal-Account-Id: идентификатор аккаунт-решен
     "middleName": "Иванович",
     "lastName": "Иванов"
   },
-  "closeMoment": "2024-11-18 21:41:46"
+  "closeMoment": "2024-11-18T21:41:46"
 }
 ```
 

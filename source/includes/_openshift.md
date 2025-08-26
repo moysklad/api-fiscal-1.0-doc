@@ -25,7 +25,7 @@
     + **firstName** - Имя
     + **middleName** - Фамилия
     + **lastName** - Отчество
-+ **openMoment** `date` - Дата открытия смены в формате ГГГГ-ММ-ДД ЧЧ:ММ:СС `Необходимое`
++ **openMoment** `date` - Дата открытия смены в формате `YYYY-MM-DDThh:mm:ss` `Необходимое`
 
 
 > **`PUT`**
@@ -73,7 +73,7 @@ X-Lognex-Fiscal-Account-Id: идентификатор аккаунт-решен
     "middleName": "Иванович",
     "lastName": "Иванов"
              },
-    "openMoment": "2024-11-18 21:41:46"
+    "openMoment": "2024-11-18T21:41:46"
 }
 ```
 

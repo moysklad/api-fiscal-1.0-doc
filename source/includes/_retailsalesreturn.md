@@ -22,7 +22,7 @@
         + **id** `string` - Идентификатор смены `Необходимое`
         + **type** `string` - тип сущности `Необходимое`
         + **idType** `string` - тип id (native или sync) `Необходимое`
-+ **moment** `date` - Дата возврата продажи в формате ГГГГ-ММ-ДД ЧЧ:ММ:СС `Необходимое`
++ **moment** `date` - Дата возврата продажи в формате `YYYY-MM-DDThh:mm:ss` `Необходимое`
 + **demand** `object` - Данные розничной продажи для возврата
     + **meta** `object` `Необходимое`
         + **href** `string` - Ссылка на продажу `Необходимое`
@@ -83,7 +83,7 @@ X-Lognex-Fiscal-Account-Id: идентификатор аккаунт-решен
 ```json
 {
   "meta": {
-    "href": "https://api.moysklad.ru/api/remap/1.0/entity/sale/saleId",
+    "href": "https://api.moysklad.ru/api/remap/1.0/entity/retailsalesreturn/retailsalesreturnId",
     "id": "salesReturnId",
     "type": "RetailSalesReturn",
     "idType": "native"
@@ -105,10 +105,10 @@ X-Lognex-Fiscal-Account-Id: идентификатор аккаунт-решен
       "idType": "native"
     }
   },
-  "moment": "2024-11-20 14:30:00",
+  "moment": "2024-11-20T14:30:00",
   "demand": {
     "meta": {
-      "href": "https://api.moysklad.ru/api/remap/1.0/entity/retaildemand/retaildemandid/",
+      "href": "https://api.moysklad.ru/api/remap/1.0/entity/retaildemand/retaildemandid",
       "id": "e21d80cb-8344-43c6-8c47-bedf0b7b5822",
       "type": "RetailDemand",
       "idType": "native"
