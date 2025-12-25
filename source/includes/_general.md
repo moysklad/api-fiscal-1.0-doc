@@ -31,11 +31,17 @@
         <endpointBase>https://vendor.com/api/fiscal</endpointBase>
         <operationTypes>
             <retailDemand/>
+            <openShift/>
+            <closeShift/>
+            <retailSalesReturn/>
+            <retailDrawerCashIn/>
+            <retailDrawerCashOut/>
         </operationTypes>
         <paymentTypes>
             <cash/>
             <card/>
             <cashCard/>
+            <qr/>
         </paymentTypes>
     </fiscalApi>
 
