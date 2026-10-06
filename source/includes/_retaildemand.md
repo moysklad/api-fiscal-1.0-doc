@@ -49,6 +49,7 @@
             + **type** `string` - тип сущности `Необходимое`
             + **idType** `string` - тип id (native или sync) `Необходимое`
         + **name** `string` - Название товара `Необходимое`
+        + **paymentItemType** `string` - Признак предмета расчета. Возможные значения: `SERVICE`(Услуга), `GOOD`(Товар), `EXCISABLE_GOOD`(Подакцизный товар), `WORK`(Работа), `PROVIDING_RID`(Предоставление РИД), `COMPOUND_PAYMENT_ITEM`(Составной предмет расчета), `ANOTHER_PAYMENT_ITEM`(Иной предмет расчета)
     + **uom** `object` - Единица измерения
         + **name** `string` - Название единицы измерения `Необходимое`
         + **code** `string` - Код единицы измерения
@@ -127,7 +128,8 @@ X-Lognex-Fiscal-Account-Id: идентификатор аккаунт-решен
           "type": "Product",
           "idType": "native"
         },
-        "name": "Товар 1"
+        "name": "Товар 1",
+        "paymentItemType" : "GOOD"
       },
       "uom": {
         "name": "шт",
