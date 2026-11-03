@@ -1,6 +1,10 @@
 # Fiscal API 1.0 Changelog
 Изменения в Fiscal API 1.0 будут описаны в данном документе.
 
+## 03-11-2026
+### Добавлено
+- Добавлены поля `consignmentId`, `barcodes`, `mod__nct__kz`, `sn`, `originalPrice` в продажу и возврат
+
 ## 06-10-2026
 ### Добавлено
 - Добавлено поле `paymentItemType` в продажу и возврат

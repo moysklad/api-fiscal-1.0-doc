@@ -44,6 +44,12 @@
             + **idType** `string` - тип id (native или sync) `Необходимое`
         + **name** `string` - Название товара `Необходимое`
         + **paymentItemType** `string` - Признак предмета расчета. Возможные значения: `SERVICE`(Услуга), `GOOD`(Товар), `EXCISABLE_GOOD`(Подакцизный товар), `WORK`(Работа), `PROVIDING_RID`(Предоставление РИД), `COMPOUND_PAYMENT_ITEM`(Составной предмет расчета), `ANOTHER_PAYMENT_ITEM`(Иной предмет расчета)
+        + **consignmentId** `string` - Идентификатор партии
+        + **barcodes** `array` - Массив штрихкодов позиции
+            + **name** `string` - Тип штрихкода (EAN8, EAN13, Code128, GTIN, UPC) `Необходимое`
+            + **code** `string` - Штрихкод `Необходимое`
+        + **mod__nct__kz** `object` - модуль страны Казахстан (используется только с аккаунтами МоегоСклада, зарегистрированными в Казахстане)
+            + **ntin** `string` - Идентификатор ntin `Необходимое`
       + **uom** `object` - Единица измерения
         + **name** `string` - Название единицы измерения `Необходимое`
         + **code** `string` - Код единицы измерения
@@ -57,6 +63,11 @@
     + **vatEnabled** `boolean` - Включён ли НДС для позиции
     + **marks** `array` - Массив кодов маркировки
         + **cis** `string` - Код маркировки
+    + **sn** `array` - Массив серийных номеров
+        + **meta** `object` `Необходимое`
+            + **href** `string` -  Идентификатор серийного номера `Необходимое`
+            + **mediaType** `string` - Формат данных (application/json) `Необходимое`
+    + **originalPrice** `string` - Цена товара без скидок `Необходимое`
 + **vatEnabled** `boolean` - Флаг, указывающий, что документ содержит НДС
 + **vatIncluded** `boolean` - Флаг, указывающий, включён ли НДС в цену
 + **customerOrder** `object` - Заказ покупателя в МС
@@ -131,7 +142,18 @@ X-Lognex-Fiscal-Account-Id: идентификатор аккаунт-решен
           "idType": "native"
         },
         "name": "Товар 1",
-        "paymentItemType" : "GOOD"
+        "paymentItemType" : "GOOD",
+        "consignmentId" : "62ca239f-d441-11f1-0a82-094200000180",
+        "barcodes" : [ {
+          "name" : "gtin",
+          "code" : "2000000000107"
+        }, {
+          "name" : "upc",
+          "code" : "400000000022"
+        } ],
+        "mod__nct__kz" : {
+          "ntin" : "0200000123456"
+        }
       },
       "uom": {
         "name": "шт",
@@ -143,7 +165,15 @@ X-Lognex-Fiscal-Account-Id: идентификатор аккаунт-решен
       "pack": null,
       "vat": 18.0,
       "vatEnabled": true,
-      "marks": ["markCode1", "markCode2"]
+      "marks": ["markCode1", "markCode2"],
+      "sn" : [ {
+        "meta" : {
+          "href" : "https://api.moysklad.ru/api/remap/1.2/entity/thing/d5df4506-d441-11f1-0a82-0942000001a4",
+          "mediaType" : "application/json"
+        },
+        "name" : "TovFull00001"
+      } ],
+      "originalPrice" : 100000.0
     }
   ],
   "vatEnabled": true,
