@@ -21,12 +21,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '2.5.9'
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-
       - name: Build
         run:
           bundle exec middleman build --build-dir=site
