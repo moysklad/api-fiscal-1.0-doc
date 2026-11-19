@@ -14,7 +14,7 @@ jobs:
           cat CHANGELOG.md | egrep '^#+ +[0-9-]+' | sed -r 's/([0-9]+)-([0-9]+)-([0-9]+)/\3-\2-\1/g' | sort --check -nr;
 
   build:
-    # ubuntu-latest — это 26.04 с GCC 15. Старые нативные гемы (ffi 1.9.17 и др.)
+    # ubuntu-latest — изменилась недавно на 26.04 с GCC 15. Старые нативные гемы (ffi 1.9.17 и др.)
     # на нём не собираются: поэтому версия указана явно как 24.04.
     runs-on: ubuntu-24.04
     needs: date-check
